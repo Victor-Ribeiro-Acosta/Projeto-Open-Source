@@ -14,6 +14,7 @@ Um modelo para criar objetos. Define atributos (dados) e métodos (funções) qu
     def saudacao(self):
         return f"Olá, meu nome é {self.nome} e eu tenho {self.idade} anos."
 ```
+Veja um exemplo em [Exemplos](Exemplos/Classes.py)
 <br>
 
 #### Objeto
@@ -40,7 +41,7 @@ Funções que definem o comportamento do objeto, sempre possuem () no final.<br>
 <br>
 
 #### Encapsulamento
-Restrição do acesso direto a certos dados do objeto. Podemos restringir o acesso a certos atributos utilizando modificadores de acesso.
+Restrição do acesso direto a certos dados do objeto. Podemos restringir o acesso a certos atributos utilizando modificadores de acesso. Em Python, usamos convenções para indicar atributos privados (__atributo).
 ```
   class ContaBancaria:
       def __init__(self, titular, saldo):
