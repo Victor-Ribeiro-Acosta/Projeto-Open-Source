@@ -60,3 +60,72 @@ Restrição do acesso direto a certos dados do objeto. Podemos restringir o aces
 ```
 <br>
 
+#### Herança
+Capacidade de uma classe herdar atributos e métodos de outra classe, promovendo a reutilização de código.<br>
+```
+  class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+    
+    def emitir_som(self):
+        return "Som genérico"
+
+  # Cachorro herda de Animal
+  class Cachorro(Animal):
+    def emitir_som(self):
+        return "Au Au!"
+
+  # Gato herda de Animal
+  class Gato(Animal):
+    def emitir_som(self):
+        return "Miau!"
+
+  # Criando objetos
+  animal = Animal("Criatura")
+  cachorro = Cachorro("Rex")
+  gato = Gato("Mingau")
+
+  print(animal.emitir_som())  # Som genérico
+  print(cachorro.emitir_som())  # Au Au!
+  print(gato.emitir_som())  # Miau!
+```
+<br>
+
+#### Polimorfismo
+Capacidade de métodos terem diferentes comportamentos dependendo da classe. Isso permite que uma mesmo método seja usado para diferentes tipos de dados.
+O polimorfismo permite que objetos de diferentes classes possam ser tratados de maneira uniforme. Isso significa que podemos chamar o mesmo método em diferentes classes e obter respostas adequadas ao contexto.<br>
+```
+class Veiculo:
+    def mover(self):
+        return "O veículo está se movendo."
+
+class Carro(Veiculo):
+    def mover(self):
+        return "O carro está andando na estrada."
+
+class Barco(Veiculo):
+    def mover(self):
+        return "O barco está navegando na água."
+
+class Aviao(Veiculo):
+    def mover(self):
+        return "O avião está voando no céu."
+
+# Função que usa polimorfismo
+
+def deslocar(veiculo):
+    print(veiculo.mover())
+
+# Criando objetos das subclasses
+meu_carro = Carro()
+meu_barco = Barco()
+meu_aviao = Aviao()
+
+# Chamando a função polimórfica
+for veiculo in [meu_carro, meu_barco, meu_aviao]:
+    deslocar(veiculo)
+```
+<br>
+
+#### Conclusão
+A Programação Orientada a Objetos em Python permite criar códigos mais organizados, reutilizáveis e fáceis de manter. Utilizando conceitos como classes, objetos, encapsulamento, herança e polimorfismo, podemos estruturar programas de forma eficiente e intuitiva. A herança possibilita a reutilização de código, enquanto o polimorfismo garante flexibilidade ao trabalhar com diferentes classes de maneira uniforme.
